@@ -6,10 +6,6 @@ export default class NavigationComponent extends Component {
         super();
     }
 
-    adminLinks() {
-
-    }
-
     render() {
         return (
             <div>
