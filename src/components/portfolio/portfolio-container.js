@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 import PortfolioItem from './portfolio-item'
 
@@ -9,14 +10,8 @@ export default class PortfolioContainer extends Component {
         this.state = {
             pageTitle :'Welcome to my Portfolio',
             isLoading: false,
-            data: [
-                {title:'eCommerce 1', category:'eCommerce', slug:'ecommerce1'},
-                {title:'Scheduling 1', category:'Scheduling', slug:'scheduling'},
-                {title:'Enterprice 1', category:'Enterprice', slug:'enterprice'},
-                {title:'eCommerce 2', category:'eCommerce', slug:'ecommerce2'}
-            ]
+            data: []
         };
-// check out the power of bind
         this.handleFilter = this.handleFilter.bind(this);
     }
     handleFilter(filter) {
@@ -27,18 +22,36 @@ export default class PortfolioContainer extends Component {
         })
     }
 
+    getPortfolioItems() {
+        axios.get('https://johnattan.devcamp.space/portfolio/portfolio_items')
+    .then(response => {
+        this.setState({
+            data: response.data.portfolio_items
+        })
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    }
+    
     portfolioItems() {
         return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} url={'google.com'} slug={item.slug}/>;
+            return <PortfolioItem 
+            key = {item.id} 
+            item = {item}
+            />
         });
     }
 
-    
+    componentDidMount() {
+        this.getPortfolioItems();
+    }
 
     render() {
         if (this.state.isLoading) {
             return <div>Loading...</div>;
         }
+
 
         return (
             <div>
