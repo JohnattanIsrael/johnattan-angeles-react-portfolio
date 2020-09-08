@@ -10,17 +10,15 @@ import Contact from './pages/contact';
 import AddBlog from './pages/add-blog';
 import PortfolioDetail from './portfolio/portfolio-detail';
 import NoMatch from './pages/no-match';
+import PortfolioContainer from './portfolio/portfolio-container';
 
 export default class App extends Component {
   render() {
     return (
-      <div className='app'>
+      <div className='container'>
 
         <Router>
           <div>
-              <h1>Johnattan Angeles React Portfolio</h1>
-              <div>{moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
-
               <NavigationContainer />
 
               <Switch>
