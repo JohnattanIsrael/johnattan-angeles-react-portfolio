@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FortAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faSignOutAlt, faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 import NavigationContainer from "./navigation/navigation-container";
 import Home from './pages/home';
@@ -13,6 +16,7 @@ import PortfolioDetail from './portfolio/portfolio-detail';
 import NoMatch from './pages/no-match';
 import Auth from './pages/auth';
 
+library.add(faTrash, faSignOutAlt, faEdit, faTrashAlt);
 
 export default class App extends Component {
   constructor(props) {
