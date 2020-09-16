@@ -9,6 +9,7 @@ import NavigationContainer from "./navigation/navigation-container";
 import Home from './pages/home';
 import About from './pages/about';
 import Blog from './pages/blog';
+import BlogDetail from './pages/blog-detail'; 
 import Contact from './pages/contact';
 import AddBlog from './pages/add-blog';
 import PortfolioManager from './pages/portfolio-manager';
@@ -117,6 +118,7 @@ export default class App extends Component {
               {this.state.loggedInStatus === 'LOGGED_IN' ? this.authorizedPages() : null}
               <Route path='/contact' component={Contact} />
               <Route path='/blog' component={Blog} />
+              <Route path='/b/:slug' component={BlogDetail} />
               <Route path='/add-blog' component={AddBlog} />
               <Route exact path='/portfolio/:slug' component={PortfolioDetail} />
 
