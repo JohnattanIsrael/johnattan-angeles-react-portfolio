@@ -9,7 +9,8 @@ import {
   faEdit, 
   faTrashAlt,
   faCircleNotch,
-  faSpinner 
+  faSpinner, 
+  faPlusSquare 
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavigationContainer from "./navigation/navigation-container";
@@ -24,7 +25,7 @@ import PortfolioDetail from './portfolio/portfolio-detail';
 import NoMatch from './pages/no-match';
 import Auth from './pages/auth';
 
-library.add(faTrash, faSignOutAlt, faEdit, faTrashAlt, faCircleNotch, faSpinner);
+library.add(faTrash, faSignOutAlt, faEdit, faTrashAlt, faCircleNotch, faSpinner, faPlusSquare );
 
 export default class App extends Component {
   constructor(props) {
@@ -124,7 +125,13 @@ export default class App extends Component {
               <Route path='/about-me' component={About} />
               {this.state.loggedInStatus === 'LOGGED_IN' ? this.authorizedPages() : null}
               <Route path='/contact' component={Contact} />
-              <Route path='/blog' component={Blog} />
+
+              <Route path='/blog' 
+              render={props => (
+                <Blog {...props} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+              />
+
               <Route path='/b/:slug' component={BlogDetail} />
               <Route path='/add-blog' component={AddBlog} />
               <Route exact path='/portfolio/:slug' component={PortfolioDetail} />
