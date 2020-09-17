@@ -18,11 +18,11 @@ class Blog extends Component {
         }
 
         this.getBlogItems = this.getBlogItems.bind(this);
-        this.activateInfinitaScroll();
+        this.onScroll = this.onScroll.bind(this);
+        window.addEventListener('scroll', this.onScroll, false);
     }
 
-    activateInfinitaScroll() {
-        window.onscroll = () => {
+    onScroll() {
             if (
                 this.state.isLoading || 
                 this.state.blogItems.length === this.state.totalCount
@@ -35,7 +35,7 @@ class Blog extends Component {
             ) {
                 this.getBlogItems();     
             } 
-        };
+        
     }
 
     getBlogItems() {
@@ -46,7 +46,7 @@ class Blog extends Component {
         axios.get(`https://johnattan.devcamp.space/portfolio/portfolio_blogs?page=${this.state.currentPage}`,
             { withCredentials: true }
         ).then(response => {
-            // console.log('getting', response.data);
+            console.log('getting', response.data);
             this.setState({
                 blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
                 totalCount: response.data.meta.total_records,
@@ -59,6 +59,10 @@ class Blog extends Component {
 
     componentWillMount() {
         this.getBlogItems();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll, false);
     }
 
     render() {
