@@ -30,7 +30,7 @@ class Blog extends Component {
     handleSuccessfullNewBlogSubmission(blog) {
         this.setState({
             blogModalIsOpen: false,
-            blogItem: [blog].concat(this.state.blogItems)
+            blogItems: [blog].concat(this.state.blogItems)
         })
     }
 
