@@ -34,10 +34,11 @@ export default class BlogDetail extends Component {
     }
 
     handleEditClick() {
+        if (this.props.loggedInStatus === 'LOGGED_IN') {
         this.setState({
             editMode: true,
         });
-
+        }
     }
 
 
