@@ -12,7 +12,6 @@ export default function () {
                     backgroundPosition: 'center'
                 }} />
 
-
             <div className='right-column'>
                 <h1>I´m Johnattan M Angeles</h1>
                 <h3>
