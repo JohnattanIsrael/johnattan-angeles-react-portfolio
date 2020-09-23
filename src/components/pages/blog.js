@@ -121,7 +121,6 @@ class Blog extends Component {
                 return (
                     <BlogItem key={blogItem.id} blogItem={blogItem} />
                 )}
-            
         });
         return (
             <div className='blog-container'>

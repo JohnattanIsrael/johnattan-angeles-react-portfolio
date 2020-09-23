@@ -14,7 +14,7 @@ export default class BlogForm extends Component {
       blog_status: "",
       content: "",
       featured_image: "",
-      apiUrl: "https://jordan.devcamp.space/portfolio/portfolio_blogs",
+      apiUrl: "https://johnattan.devcamp.space/portfolio/portfolio_blogs",
       apiAction: "post"
     };
 
@@ -54,7 +54,7 @@ export default class BlogForm extends Component {
         title: this.props.blog.title,
         blog_status: this.props.blog.blog_status,
         content: this.props.blog.content,
-        apiUrl: `https://jordan.devcamp.space/portfolio/portfolio_blogs/${
+        apiUrl: `https://johnattan.devcamp.space/portfolio/portfolio_blogs/${
           this.props.blog.id
         }`,
         apiAction: "patch"
