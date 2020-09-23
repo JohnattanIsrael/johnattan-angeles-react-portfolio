@@ -11,6 +11,7 @@ import {
     faMobile,
     faMapMarkerAlt,
     faPaperPlane,
+    faLock
   } from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
@@ -23,7 +24,8 @@ return library.add(
   faPlusSquare, 
   faMobile,
   faMapMarkerAlt,
-  faPaperPlane 
+  faPaperPlane,
+  faLock
   );
 };
 

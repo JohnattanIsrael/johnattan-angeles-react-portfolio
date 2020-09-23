@@ -124,7 +124,7 @@ export default class BlogForm extends Component {
         });
 
         if (this.props.editMode) {
-          // Update blog detail
+          // Update Blog Detail
           this.props.handleUpdateFormSubmission(response.data.portfolio_blog);
         } else {
           this.props.handleSuccessfullFormSubmission(
