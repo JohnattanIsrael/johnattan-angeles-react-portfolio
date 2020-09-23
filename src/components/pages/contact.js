@@ -22,7 +22,7 @@ export default function () {
                             <FontAwesomeIcon icon='mobile'/>
                         </div>
                         <div className='text'>
-                            555-555-5555
+                            (+52) 55 1137 3263 
                         </div>
                     </div>
                     <div className='bullet-point-group'>
