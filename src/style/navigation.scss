@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     padding: 30px;
+    @media (min-width: 600px) {
+        width: 100vw;
+        justify-content: start;
+    }
 
     .left-side {
         display: flex;

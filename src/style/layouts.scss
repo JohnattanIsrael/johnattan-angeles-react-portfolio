@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: calc(100vh -83px) ;
+    @media screen and (max-width: 700px){
+        grid-template-columns: 1fr;
+        height: 150vh;
+    }
 
     .right-column {
         display: flex;
@@ -10,6 +14,10 @@
         align-items: center;
         flex-direction: column;
         padding: 100px;
+        @media screen and (max-width: 700px){
+            justify-content: start;
+            padding: 31px 80px;
+        }
 
         .contact-bullet-points {
             display: grid;
